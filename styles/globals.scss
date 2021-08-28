@@ -1,0 +1,66 @@
+@import 'variables';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: hsla(0,0%,0%,0.9);
+  height: 100vh;
+  font-weight: 400;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat,sans-serif;
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+}
+
+aside {
+  display: flex;
+  margin-bottom: 3.5rem;
+}
+
+time {
+  font-family: Montserrat,sans-serif;
+}
+
+code {
+  color: $pink;
+  white-space: pre;
+}
+
+p {
+  line-height: 2;
+}
+
+blockquote > * {
+  font-style: oblique;
+  font-weight: 600;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}

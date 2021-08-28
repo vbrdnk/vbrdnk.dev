@@ -5,18 +5,33 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/common/types/contentful.d.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.2.0",
+    "bootstrap": "^5.1.0",
+    "contentful": "^8.5.0",
+    "dayjs": "^1.10.6",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "reactstrap": "^8.9.0",
+    "sass": "^1.38.2"
   },
   "devDependencies": {
     "@types/react": "17.0.19",
+    "contentful-management": "^7.33.0",
+    "contentful-typescript-codegen": "^3.2.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.2",
+    "next-sitemap": "^1.6.164",
+    "prettier": "^2.3.2",
     "typescript": "4.3.5"
   }
 }

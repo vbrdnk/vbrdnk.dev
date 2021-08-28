@@ -1,0 +1,21 @@
+@import 'styles/variables';
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 42rem;
+  padding: 3rem 1.5rem;
+
+  a {
+    color: $pink;
+    font-weight: 900;
+    text-decoration: none;
+  }
+}
+
+.backHome {
+  margin: 1rem 0 0;
+  font-weight: 900;
+}
+
+
