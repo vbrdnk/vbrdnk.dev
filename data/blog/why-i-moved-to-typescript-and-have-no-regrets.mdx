@@ -1,0 +1,70 @@
+---
+title: 'Why I moved to TypeScript and have no regrets'
+createdAt: '2021-08-29'
+---
+
+It‘s worth being said that it wasn\'t my intention to move to TypeScript instead of vanilla JS. It just happened that we decided to move our production-ready project to Angular 4, which, as all of you know, uses TypeScript as a default language. Despite the fact that Angular projects can also be written in plain JavaScript, its documentation, examples, and most of the answers at StackOverflow are written in TypeScript. So, the decision was made and I have no single regret of doing that. Let me explain why.
+TypeScript provides us with a bunch of advantages that are not implemented in ECMAScript aka JavaScript yet. So, let’s discuss them one by one.
+
+<br />
+
+<Heading as="h3" size="lg">
+  Types
+</Heading>
+
+For those of you who didn\'t work or hear about TypeScript:
+
+<br />
+> …it is a typed superset of JavaScript that compiles to plain JavaScript
+<br />
+
+It becomes obvious from the language name that the main difference lies in the fact that TS uses types. So, yeah, it is strongly typed language, the feature that about 50% of JavaScript developers were missing and the remaining 50% hate in other strongly-typed languages. Without referring to types of responses or other data, we had a lot of freedom in our code but at the same time, this freedom is the main reason for lots of errors that are hardly debuggable (not sure if such a word even exists).
+From my perspective, types are great. They make your code more accurate and understandable for other developers. It makes it much easier to see what method returns when you intentionally define its return type and it also prevents you from returning something else. The second benefit of typing is to see the response type of your HTTP request. We all know how painful it may be in JavaScript to debug errors when your code doesn’t work properly and the reason for that is that you’re referring to a response property that may not exist at all. Therefore, declaring the response type prevents you, a developer, from this headache.
+
+<br />
+
+<Heading as="h3" size="lg">
+  Classes and Interfaces
+</Heading>
+
+For those of you who gonna tell me that ES6 introduced classes, my response would be “Yes, I know that”. However, typescript is not just about classes and types. If not mentioning that TS classes also provide us, developers, with public, private, static, readonly members of classes, it also introduces to us Abstract Classes and Interfaces, which we do not currently have in JavaScript.
+Abstract Classes are a part of more advanced topics of OOP rather than TypeScript but still, they are worth mentioning. Here’s a quote from the official TS documentation:
+Abstract classes are base classes from which other classes may be derived. They may not be instantiated directly. Unlike an interface, an abstract class may contain implementation details for its members. The abstract keyword is used to define abstract classes as well as abstract methods within an abstract class.
+
+The simplest and the most vivid example of Abstract Class is:
+
+<Image
+  alt={'Abstract Class'}
+  width={1200}
+  height={550}
+  layout="responsive"
+  src={'/static/images/why-i-moved-to-ts/animalCode.png'}
+/>
+
+Interfaces are another great feature that was introduced in TypeScript and which is actually used on a daily basis compared to Abstract Classes. Generally, in Typescript, interfaces fill the role of naming your own data types and are considered a powerful way of defining contracts within your code as well as contracts with code outside of your project. It means that the interface helps you define the skeleton of classes or data types, while their actual implementation may differ.
+Public, Private, Protected, Static, Readonly Modifiers.
+
+As it’s been mentioned before, ES6 introduced classes to JavaScript developers, but it missed one important thing — modifiers. Since TypeScript is a more advanced and progressive version of JavaScript, it successfully fills this gap. With such modifiers as public, private, protected, static, readonly, we are able to enclose variables, properties, and methods into the corresponding scope. Plus, it is no longer needed to use different workarounds like IIFE or revealing patterns. With TypeScript, you can easily define which fields and methods should be accessible outside classes and which should not, which ones we allow to change and which should always remain unchanged.
+
+<br />
+
+<Heading as="h3" size="lg">
+  Namespaces and Modules
+</Heading>
+
+Comparing to ES6, which has modules to help developers organize their code, TypeScript also gives them such a nice thing as namespaces that are heavily used in other OOP languages like C#.
+Briefly speaking, namespaces are a way of organizing code, dividing it into different parts, which gives us access to the code from the other parts of an application.
+Using namespaces is especially useful when you do not want to spoil the global scope with a bunch of variables. Apart from that, interfaces are very handy when the application is quite big and we want to split the code across multiple files to make it easier to maintain in the future.
+
+<br />
+
+<Heading as="h3" size="lg">
+  TypeScript Is Still JavaScript
+</Heading>
+
+The last but not least thing I’d like to mention is that TypeScript is still JavaScript. TS is based on ES6 features and does not provide new methods or change the existing ones. If you compile your TS code into JavaScript, you will see the same Prototypical Inheritance. You will never see in a compiled JS code interfaces, decorators, modifiers — they just do not exist. Therefore, it is just a layer on top of JavaScript, which improves the experience of developers and prevents lots of unnecessary bugs from happening.
+On top of that, you are free to choose to which version of JavaScript your TypeScript code will be compiled, which means it will run even in Internet Explorer.
+Don’t take me wrong, I am not telling that we all should stop writing in JavaScript and move to TypeScript. JavaScript is a great language with an increasing pace of development. Its popularity is growing from year to year and now it is one of the most popular and frequently used programming languages. Still, there are a lot of areas for future improvements, and that’s where TypeScript comes into play.
+
+<br />
+Keep in touch and happy coding.
