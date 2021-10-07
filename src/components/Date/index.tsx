@@ -1,12 +1,12 @@
 import React from 'react';
-import dayjs from 'dayjs';
+import { format, parseISO } from 'date-fns';
 
-interface DateProps {
+type DateProps = {
   date: string;
-}
+};
 
 const Date: React.FC<DateProps> = ({ date }) => {
-  return <time dateTime={date}>{dayjs(date).format('MMMM D, YYYY')}</time>;
+  return <time dateTime={date}>{format(parseISO(date), 'MMMM d, yyyy')}</time>;
 };
 
 export default Date;

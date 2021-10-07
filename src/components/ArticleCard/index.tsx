@@ -1,26 +1,30 @@
 import React from 'react';
 import Link from 'next/link';
+import { Heading, Text } from '@chakra-ui/react';
 
 import Date from 'components/Date';
-import { IArticle } from 'common/types/contentful';
 
-interface ArticleProps {
-  article: IArticle;
-}
+type ArticleProps = {
+  title: string;
+  description?: string;
+  slug: string;
+  createdAt: string;
+};
 
-const ArticleCard: React.FC<ArticleProps> = ({ article }) => {
+const ArticleCard: React.FC<ArticleProps> = ({ title, description, slug, createdAt }) => {
   return (
     <>
       <article>
         <header>
-          <h3>
-            <Link href={`/articles/${article.fields.slug}`}>
-              <a>{article.fields.title}</a>
+          <Heading size="xl" mb={2}>
+            <Link href={`/blog/${slug}`}>
+              <a>{title}</a>
             </Link>
-          </h3>
-          <Date date={article.sys.createdAt} />
+          </Heading>
+
+          <Date date={createdAt} />
         </header>
-        {article.fields.description && <p>{article.fields.description}</p>}
+        {description && <Text mt={4}>{description}</Text>}
       </article>
     </>
   );
