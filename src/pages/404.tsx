@@ -2,11 +2,11 @@ import type { NextPage } from 'next';
 
 import Layout from 'components/Layout';
 
-import styles from '../../styles/404.module.scss';
+import styles from 'styles/404.module.scss';
 
 const NotFound: NextPage = () => {
   return (
-    <Layout title='Oops! Page not found.'>
+    <Layout title="Oops! Page not found.">
       <div className={styles.notFound}>
         <h3>Oops! Page not found.</h3>
         <h1>

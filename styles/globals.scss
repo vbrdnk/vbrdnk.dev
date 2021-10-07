@@ -4,19 +4,30 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: hsla(0,0%,0%,0.9);
+  font-family: Fira Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Droid Sans, Helvetica Neue, sans-serif;
+  color: hsla(0, 0%, 0%, 0.9);
   height: 100vh;
   font-weight: 400;
   word-wrap: break-word;
   font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
   display: block;
 }
 
@@ -29,24 +40,12 @@ a {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Montserrat,sans-serif;
-  font-weight: 900;
-  text-rendering: optimizeLegibility;
-}
-
 aside {
-  display: flex;
   margin-bottom: 3.5rem;
 }
 
 time {
-  font-family: Montserrat,sans-serif;
-}
-
-code {
-  color: $pink;
-  white-space: pre;
+  font-family: Montserrat, sans-serif;
 }
 
 p {
@@ -58,9 +57,27 @@ blockquote > * {
   font-weight: 600;
 }
 
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3rem;
-}
+// pre {
+//   float: left;
+//   min-width: 100%;
+//   overflow: auto;
+//   padding: 1.3125rem;
+
+//   code {
+//     color: #fff;
+//     background: none !important;
+//     font-feature-settings: normal;
+//     text-align: left;
+//     white-space: pre;
+//     word-spacing: normal;
+//     word-break: normal;
+//     word-wrap: normal;
+//     line-height: 1.5;
+//     margin-bottom: 0;
+//     -moz-tab-size: 4;
+//     tab-size: 4;
+//     -webkit-hyphens: none;
+//     -ms-hyphens: none;
+//     hyphens: none;
+//   }
+// }

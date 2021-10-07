@@ -1,10 +1,7 @@
 @import 'styles/variables';
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 42rem;
-  padding: 3rem 1.5rem;
+  padding: 3rem 0;
 
   a {
     color: $pink;
@@ -18,4 +15,16 @@
   font-weight: 900;
 }
 
+.avatar {
+  position: relative;
+  margin-right: 0.875rem;
+  margin-bottom: 0;
+  min-width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
 
+.description {
+  max-width: 400px;
+}

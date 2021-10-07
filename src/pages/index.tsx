@@ -1,53 +1,26 @@
-import type { GetStaticProps, NextPage } from 'next';
-import Image from 'next/image';
-import { Row } from 'reactstrap';
-
+import type { NextPage } from 'next';
+import Link from 'next/link';
+import { Heading, Text, Box } from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 import Layout from 'components/Layout';
-import ArticleCard from 'components/ArticleCard';
-import { getArticlePreviews } from 'lib/articles';
-import { IArticle } from 'common/types/contentful';
+import TopTracks from 'components/TopTracks';
 
-import avatarPic from 'public/images/avatar.jpg';
-import styles from 'styles/Home.module.scss';
-
-interface HomeProps {
-  articles: IArticle[];
-}
-
-const Home: NextPage<HomeProps> = ({ articles }) => {
+const Home: NextPage = () => {
   return (
     <Layout home>
-      <aside>
-        <div className={styles.avatar}>
-          <Image src={avatarPic} alt="Vladyslav Burdeniuk" layout="fill" />
-        </div>
+      <Box mb={12}>
+        <Heading mb={4}>Blog</Heading>
+        <Text mb={4}>I write mostly about web development and tech careers.</Text>
+        <Link href="/blog">
+          <a>
+            Read all posts <ArrowForwardIcon />{' '}
+          </a>
+        </Link>
+      </Box>
 
-        <p className={styles.description}>
-          Personal blog by Vladyslav Burdeniuk.
-          <br />I explain with words and code.
-        </p>
-      </aside>
-
-      {articles.map(article => {
-        return (
-          <Row key={article.fields.slug} className={styles.articleWrapper}>
-            <ArticleCard article={article} />
-          </Row>
-        );
-      })}
+      <TopTracks />
     </Layout>
   );
 };
 
 export default Home;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const articles = await getArticlePreviews();
-
-  return {
-    props: {
-      articles,
-    },
-    revalidate: 3600,
-  };
-};
