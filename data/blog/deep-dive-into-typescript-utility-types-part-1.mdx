@@ -1,0 +1,86 @@
+---
+title: 'Deep dive into TypeScript Utility Types. Part 1'
+createdAt: '2021-08-31'
+description: 'Write better code by using TypeScript Utility types and understanding how they work.'
+---
+
+If you are using TypeScript on an everyday basis or just getting familiar with it, you might have heard about its utility types. Utility types are the built-in types that you can use as a developer without needing any additional packages. Most of the time we don't ponder about how those types are designed under the hood and just use them according to [TypeScript Documentation](https://www.typescriptlang.org/docs/). Don't take me wrong, there is nothing bad with that, especially considering that TypeScript is managed by Microsoft and there is a bunch of smart people responsible for it. But to better understand how utility types work, there is a better approach - to implement them on your own.
+
+So, let's dive deep into it and try to implement custom utility types.
+
+<br />{' '}
+
+<Heading as="h3" size="lg">
+  Partial\<T\>
+</Heading>
+
+The first type we'll discuss today is Partial\<T\>. According to documentation:
+
+> `Partial<T>` constructs a type with all properties of T set to optional and returns a type that represents all subsets of a given type.
+> Before implementing any of the TypeScript Utility types there is one important thing we should discuss - Mapped types. In short, Mapped types build on the syntax for index signatures, which are used to declare the types of properties which has not been declared ahead of time. Okay, less talking more coding.
+
+<Image
+  alt={'Custom Partial'}
+  width={1400}
+  height={350}
+  layout="responsive"
+  src={'/static/images/deep-dive-into-typescript/MyPartial.png'}
+/>
+
+So, what is going on in the example above? The first and foremost thing to understand is that by using mapped types we just simply iterating all properties of type T that is passed as a generic argument to our custom partial type. But iterating is not just enough since partial means that all the properties should be optional. To do so, we use mapping modifiers, more specifically ?, which serves as optionality modifier.
+
+<br />
+
+<Heading as="h3" size="lg">
+  Required\<T\>
+</Heading>
+
+The next utility type we'll take a look at today is `Required<T>`. In general, it is simply opposite to `Partial<T>` that accepts as generic argument some object of type T and makes all of its properties required. To remove optionality modifier we simply prefix it with -.
+
+<Image
+  alt={'Custom Required'}
+  width={1400}
+  height={350}
+  layout="responsive"
+  src={'/static/images/deep-dive-into-typescript/MyRequired.png'}
+/>
+
+<Heading as="h3" size="lg">
+  Readonly\<T\>
+</Heading>
+
+`Readonly<T>` is yet another utility type that is immensely easy to implement. In this case, everything that is needed to make all properties of T immutable is to add readonly mapping modifier.
+
+<Image
+  alt={'Custom Readonly'}
+  width={1400}
+  height={350}
+  layout="responsive"
+  src={'/static/images/deep-dive-into-typescript/MyReadonly.png'}
+/>
+
+<Heading as="h3" size="lg">
+Record\<K, T\>
+</Heading>
+
+So far, we've been talking about simple types that cause no problem to implement. On contrary, `Record<K, T>` is a little bit different and is designed to construct an object of specific structure - to accept only certain types of values as its property keys and property values. The custom implementation of `Record<K, T>` would look something like this:
+
+<Image
+  alt={'Custom Record'}
+  width={1400}
+  height={350}
+  layout="responsive"
+  src={'/static/images/deep-dive-into-typescript/MyRecord.png'}
+/>
+Since the user is responsible for providing us with valid types that should be keys (K) instead of iterating all keys in T as we did in `Partial<T>`, `Required<T>` and `Readonly<T>` we simply iterate through all properties in K - P in K. Another thing worth our attention for better understanding is `K extends number | string | symbol`. Since our custom record type is an object and as we know javascript object accepts as key values only string, number or symbol by typing `K extends number | string | symbol` we just manually telling that our `MyRecord<K, T>` should follow this rule as well.
+
+<br />
+
+<Heading as="h3" size="lg">
+  Final words
+</Heading>
+
+Thanks for reading the first part of the "Deep dive into TypeScript Utility Types" series. Hope it will throw light on TypeScript Utility types and help to understand how they are implemented. Next time, we will discuss other types as `Pick<Type, Keys>`, `Omit<Type, Keys>`, `ReturnType<Type>`, and much more.
+
+<br />
+Keep in touch and happy coding.
