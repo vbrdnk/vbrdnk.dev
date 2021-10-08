@@ -3,7 +3,7 @@ import { Heading, Text } from '@chakra-ui/react';
 
 import Track from 'components/Track';
 import fetcher from 'lib/fetcher';
-import { ITopTracks } from 'lib/types';
+import { TopTracks as ITopTracks } from 'lib/types';
 
 const TopTracks: React.FC = () => {
   const { data } = useSWR<ITopTracks>('/api/top-tracks', fetcher);

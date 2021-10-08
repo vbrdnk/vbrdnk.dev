@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Divider, Wrap, Text } from '@chakra-ui/react';
-import { ISong } from 'lib/types';
+import { Song } from 'lib/types';
 
 import styles from './Track.module.scss';
 
 type TrackProps = {
   ranking: number;
-  track: ISong;
+  track: Song;
 };
 
 const Track: React.FC<TrackProps> = ({ ranking, track }) => {

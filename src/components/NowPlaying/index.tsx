@@ -1,12 +1,12 @@
 import useSWR from 'swr';
 import { Text, Box } from '@chakra-ui/react';
 import fetcher from 'lib/fetcher';
-import { INowPlayingSong } from 'lib/types';
+import { NowPlayingSong } from 'lib/types';
 
 import styles from './NowPlaying.module.scss';
 
 const NowPlaying: React.FC = () => {
-  const { data } = useSWR<INowPlayingSong>('/api/now-playing', fetcher);
+  const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
 
   return (
     <Box display="flex" alignItems="center" mt={8}>

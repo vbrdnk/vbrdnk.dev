@@ -1,24 +1,23 @@
 import React, { useMemo } from 'react';
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { getMDXComponent } from 'mdx-bundler/client';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Heading,
-  Link,
-  Text,
-  Flex,
-} from '@chakra-ui/react';
-import { TimeIcon } from '@chakra-ui/icons';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading } from '@chakra-ui/react';
 
 import components from 'components/MDXComponents';
 import Layout from 'components/Layout';
-import { getFiles, getFileBySlug, FileType } from 'lib/mdx';
+import ReadingTime from 'components/ReadingTime';
+import { getFiles, getFileBySlug } from 'lib/mdx';
+import { FileType, FrontMatterResponse } from 'lib/types';
 
-// @ts-ignore
-const Blog: NextPage = ({ code, frontMatter }) => {
+type BlogPageProps = FrontMatterResponse;
+
+const Blog: NextPage<BlogPageProps> = ({ code, frontMatter }) => {
   const Component = useMemo(() => getMDXComponent(code), [code]);
+  const {
+    title: blogPostTitle,
+    readingTime: { text: blogPostReadingTime },
+  } = frontMatter;
 
   return (
     <Layout
@@ -27,26 +26,19 @@ const Blog: NextPage = ({ code, frontMatter }) => {
     >
       <Breadcrumb mb={12}>
         <BreadcrumbItem>
-          <Link href="/">
-            <a>&#123;code•aligned&#125;</a>
-          </Link>
+          <Link href="/">&#123;code•aligned&#125;</Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
+          <Link href="/blog">Blog</Link>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink>{frontMatter.title}</BreadcrumbLink>
+          <BreadcrumbLink>{blogPostTitle}</BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
 
       <article>
-        <Heading mb={4}>{frontMatter.title}</Heading>
-        <Flex align="center" mb={4}>
-          <TimeIcon mr={2} />
-          <Text as="i">{frontMatter.readingTime.text}</Text>
-        </Flex>
+        <Heading mb={4}>{blogPostTitle}</Heading>
+        <ReadingTime time={blogPostReadingTime} />
 
         <Component
           components={
@@ -62,7 +54,7 @@ const Blog: NextPage = ({ code, frontMatter }) => {
 
 export default Blog;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getFiles(FileType.Blog);
 
   return {
@@ -73,11 +65,11 @@ export async function getStaticPaths() {
     })),
     fallback: false,
   };
-}
+};
 
-// @ts-ignore
-export async function getStaticProps({ params }) {
-  const post = await getFileBySlug(FileType.Blog, params.slug);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params!.slug as string;
+  const post = await getFileBySlug(FileType.Blog, slug);
 
   return { props: { ...post } };
-}
+};
