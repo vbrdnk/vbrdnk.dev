@@ -1,6 +1,6 @@
 import React from 'react';
 import { TimeIcon } from '@chakra-ui/icons';
-import { Flex, Text } from '@chakra-ui/react';
+import { Text, Flex } from '@chakra-ui/react';
 
 type ReadingTimeProps = {
   time: string;
@@ -8,9 +8,9 @@ type ReadingTimeProps = {
 
 const ReadingTime: React.FC<ReadingTimeProps> = ({ time }) => (
   <Flex align="center" mb={4}>
-    <TimeIcon mr={2} color="gray.500" />
-    <Text as="i" color="gray.500">
-      <strong>{time}</strong>
+    <TimeIcon mr={2} color="gray.600" />
+    <Text color="gray.600" fontWeight="600">
+      {time}
     </Text>
   </Flex>
 );

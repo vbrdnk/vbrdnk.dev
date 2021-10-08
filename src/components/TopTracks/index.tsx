@@ -1,9 +1,9 @@
 import useSWR from 'swr';
-import { Heading, Text } from '@chakra-ui/react';
+import { Heading, Text, VStack } from '@chakra-ui/react';
 
-import Track from 'components/Track';
-import fetcher from 'lib/fetcher';
-import { TopTracks as ITopTracks } from 'lib/types';
+import Track from '@/components/Track';
+import fetcher from '@/lib/fetcher';
+import { TopTracks as ITopTracks } from '@/lib/types';
 
 const TopTracks: React.FC = () => {
   const { data } = useSWR<ITopTracks>('/api/top-tracks', fetcher);
@@ -21,9 +21,11 @@ const TopTracks: React.FC = () => {
         Curious what I&apos;m currently jamming to? Here&apos;s my top tracks on Spotify updated
         daily.
       </Text>
-      {data.tracks.map((track, index) => (
-        <Track ranking={index + 1} key={track.songUrl} track={track} />
-      ))}
+      <VStack spacing={4} alignItems="flex-start">
+        {data.tracks.map((track, index) => (
+          <Track ranking={index + 1} key={track.songUrl} track={track} />
+        ))}
+      </VStack>
     </>
   );
 };

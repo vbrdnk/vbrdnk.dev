@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Divider, Wrap, Text } from '@chakra-ui/react';
-import { Song } from 'lib/types';
+import { Flex, Text, Link } from '@chakra-ui/react';
 
-import styles from './Track.module.scss';
+import { Song } from '@/lib/types';
 
 type TrackProps = {
   ranking: number;
@@ -11,18 +10,17 @@ type TrackProps = {
 
 const Track: React.FC<TrackProps> = ({ ranking, track }) => {
   return (
-    <Wrap alignItems="flex-start">
-      <Box className={styles.track}>
-        <Text className={styles.trackRank}>{ranking}</Text>
-        <div>
-          <a href={track.songUrl} target="_blank" rel="noopener noreferrer">
+    <Flex display="column">
+      <Flex alignItems="baseline">
+        <Text mr={4}>{ranking}</Text>
+        <Flex display="column">
+          <Link isExternal href={track.songUrl} rel="noopener noreferrer">
             {track.title}
-          </a>
+          </Link>
           <Text color="gray.500">{track.artist}</Text>
-        </div>
-      </Box>
-      <Divider />
-    </Wrap>
+        </Flex>
+      </Flex>
+    </Flex>
   );
 };
 
