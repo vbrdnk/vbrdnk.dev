@@ -12,17 +12,17 @@ import NowPlaying from 'components/NowPlaying';
 import avatarPic from 'public/static/images/avatar.jpg';
 import styles from './Layout.module.scss';
 
-interface LayoutProps {
+type LayoutProps = {
   home?: boolean;
   title?: string;
   description?: string;
-}
+};
 
 const Layout: React.FC<LayoutProps> = ({
   children,
   home,
   title = '{code•aligned}',
-  description = 'Personal blog by Vladyslav Burdeniuk. I explain with words and code.',
+  description = 'Personal blog by Vladyslav Burdeniuk. I express myself with words and code.',
 }) => {
   const author = 'Vladyslav Burdeniuk';
   const router = useRouter();
@@ -52,8 +52,9 @@ const Layout: React.FC<LayoutProps> = ({
                 <Image src={avatarPic} alt="Vladyslav Burdeniuk" layout="fill" />
               </div>
               <Text className={styles.description}>
-                I&apos;m a developer and creator. Currenty work as the Senior Software Engineer at
-                Allset. This is my personal blog where I explain with words and code.
+                I&apos;m a creator and developer currently working as the Senior Software Engineer
+                at <strong>Allset</strong>. This is my personal blog where I express myself with
+                words and code.
               </Text>
             </Flex>
           </aside>

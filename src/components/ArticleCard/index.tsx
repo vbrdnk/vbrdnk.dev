@@ -4,12 +4,12 @@ import { Heading, Text } from '@chakra-ui/react';
 
 import Date from 'components/Date';
 
-interface ArticleProps {
+type ArticleProps = {
   title: string;
   description?: string;
   slug: string;
   createdAt: string;
-}
+};
 
 const ArticleCard: React.FC<ArticleProps> = ({ title, description, slug, createdAt }) => {
   return (

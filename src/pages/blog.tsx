@@ -1,11 +1,12 @@
 import React from 'react';
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import { Heading, Box } from '@chakra-ui/react';
 import { parseISO, compareDesc } from 'date-fns';
 
 import Layout from 'components/Layout';
 import ArticleCard from 'components/ArticleCard';
-import { FileType, getAllFilesFrontMatter, Post } from 'lib/mdx';
+import { getAllFilesFrontMatter } from 'lib/mdx';
+import { FileType, Post } from 'lib/types';
 
 type BlogProps = {
   posts: Post[];
@@ -35,8 +36,8 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
 
 export default Blog;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllFilesFrontMatter(FileType.Blog);
 
   return { props: { posts } };
-}
+};

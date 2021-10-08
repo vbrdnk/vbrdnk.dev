@@ -9,22 +9,13 @@ import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrism from 'rehype-prism-plus';
 
-export enum FileType {
-  Blog = 'blog',
-}
-
-export type Post = {
-  title: string;
-  description?: string;
-  slug: string;
-  createdAt: string;
-};
+import { FileType, FrontMatterResponse, Post } from './types';
 
 export async function getFiles(type: FileType) {
   return readdirSync(join(process.cwd(), 'data', type));
 }
 
-export async function getFileBySlug(type: FileType, slug?: string) {
+export async function getFileBySlug(type: FileType, slug?: string): Promise<FrontMatterResponse> {
   const source = slug
     ? readFileSync(join(process.cwd(), 'data', type, `${slug}.mdx`), 'utf8')
     : readFileSync(join(process.cwd(), 'data', `${type}.mdx`), 'utf8');
@@ -53,7 +44,7 @@ export async function getFileBySlug(type: FileType, slug?: string) {
   };
 }
 
-export async function getAllFilesFrontMatter(type: FileType) {
+export async function getAllFilesFrontMatter(type: FileType): Promise<Post[]> {
   const files = readdirSync(join(process.cwd(), 'data', type));
 
   return files.reduce((allPosts: any, fileName: string) => {
