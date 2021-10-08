@@ -1,4 +1,5 @@
 import { ReadTimeResults } from 'reading-time';
+import { UserRepositoriesResponse } from './github';
 
 export type Song = {
   songUrl: string;
@@ -17,6 +18,10 @@ export type NowPlayingSong = {
 
 export type TopTracks = {
   tracks: Song[];
+};
+
+export type GithubUserRepositories = {
+  repos: UserRepositoriesResponse;
 };
 
 export type Post = {
@@ -38,4 +43,11 @@ export type FrontMatterResponse = {
     slug: string | null;
     [key: string]: any;
   };
+};
+
+// metrics
+
+export type GitHub = {
+  followers: number;
+  repos: number;
 };

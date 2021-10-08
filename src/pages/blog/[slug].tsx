@@ -2,17 +2,17 @@ import React, { useMemo } from 'react';
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { getMDXComponent } from 'mdx-bundler/client';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading } from '@chakra-ui/react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading, Flex } from '@chakra-ui/react';
 
-import components from 'components/MDXComponents';
-import Layout from 'components/Layout';
-import ReadingTime from 'components/ReadingTime';
-import { getFiles, getFileBySlug } from 'lib/mdx';
-import { FileType, FrontMatterResponse } from 'lib/types';
+import components from '@/components/MDXComponents';
+import Layout from '@/components/Layout';
+import ReadingTime from '@/components/ReadingTime';
+import { getFiles, getFileBySlug } from '@/lib/mdx';
+import { FileType, FrontMatterResponse } from '@/lib/types';
 
-type BlogPageProps = FrontMatterResponse;
+type BlogPostPageProps = FrontMatterResponse;
 
-const Blog: NextPage<BlogPageProps> = ({ code, frontMatter }) => {
+const BlogPost: NextPage<BlogPostPageProps> = ({ code, frontMatter }) => {
   const Component = useMemo(() => getMDXComponent(code), [code]);
   const {
     title: blogPostTitle,
@@ -23,12 +23,13 @@ const Blog: NextPage<BlogPageProps> = ({ code, frontMatter }) => {
     <Layout
       title={`${frontMatter.title} - Vladyslav Burdeniuk`}
       description={frontMatter.description}
+      type="article"
     >
       <Breadcrumb mb={12}>
-        <BreadcrumbItem>
+        <BreadcrumbItem color="pink.500">
           <Link href="/">&#123;code•aligned&#125;</Link>
         </BreadcrumbItem>
-        <BreadcrumbItem>
+        <BreadcrumbItem color="pink.500">
           <Link href="/blog">Blog</Link>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
@@ -36,7 +37,7 @@ const Blog: NextPage<BlogPageProps> = ({ code, frontMatter }) => {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <article>
+      <Flex as="article" display="column">
         <Heading mb={4}>{blogPostTitle}</Heading>
         <ReadingTime time={blogPostReadingTime} />
 
@@ -47,12 +48,12 @@ const Blog: NextPage<BlogPageProps> = ({ code, frontMatter }) => {
             } as any
           }
         />
-      </article>
+      </Flex>
     </Layout>
   );
 };
 
-export default Blog;
+export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getFiles(FileType.Blog);

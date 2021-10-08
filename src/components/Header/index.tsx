@@ -1,15 +1,15 @@
 import React from 'react';
-import { Heading, IconButton } from '@chakra-ui/react';
-import ColorModeToggle from 'components/Toggle';
+import { IconButton, Flex } from '@chakra-ui/react';
+import ColorModeToggle from '@/components/Toggle';
 
-import styles from './Header.module.scss';
+import Nav from '@/components/Nav';
 
 const Header: React.FC = () => {
   return (
-    <header className={styles.header}>
-      <Heading size="xl">&#123;code•aligned&#125;</Heading>
+    <Flex as="header" justifyContent="space-between" alignItems="center" mb={8}>
+      <Nav />
       <IconButton aria-label="Toggle Color Mode" icon={<ColorModeToggle />} />
-    </header>
+    </Flex>
   );
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { Heading, Text } from '@chakra-ui/react';
+import { Heading, Text, Flex, Link as ChakraLink } from '@chakra-ui/react';
 
-import Date from 'components/Date';
+import Date from '@/components/Date';
 
 type ArticleProps = {
   title: string;
@@ -13,20 +13,18 @@ type ArticleProps = {
 
 const ArticleCard: React.FC<ArticleProps> = ({ title, description, slug, createdAt }) => {
   return (
-    <>
-      <article>
-        <header>
-          <Heading size="xl" mb={2}>
-            <Link href={`/blog/${slug}`}>
-              <a>{title}</a>
-            </Link>
-          </Heading>
+    <Flex as="article" direction="column">
+      <Flex as="header" direction="column">
+        <Heading mb={2}>
+          <Link href={`/blog/${slug}`} passHref>
+            <ChakraLink>{title}</ChakraLink>
+          </Link>
+        </Heading>
 
-          <Date date={createdAt} />
-        </header>
-        {description && <Text mt={4}>{description}</Text>}
-      </article>
-    </>
+        <Date date={createdAt} />
+      </Flex>
+      {description && <Text mt={4}>{description}</Text>}
+    </Flex>
   );
 };
 
