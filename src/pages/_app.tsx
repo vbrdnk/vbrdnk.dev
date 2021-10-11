@@ -1,17 +1,39 @@
 import type { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
-import '@fontsource/montserrat/900.css';
-import '@fontsource/open-sans/400.css';
-import theme from 'styles/theme';
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
+import { css, Global } from '@emotion/react';
 
-import 'styles/globals.scss';
+import theme from '@/styles/theme';
+import '@/styles/globals.scss';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const GlobalStyle = () => {
+  return (
+    <>
+      <CSSReset />
+      <Global
+        styles={css`
+          html {
+            min-width: 360px;
+            scroll-behavior: smooth;
+          }
+
+          #__next {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+          }
+        `}
+      />{' '}
+    </>
+  );
+};
+
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
+      <GlobalStyle />
       <Component {...pageProps} />
     </ChakraProvider>
   );
-}
+};
 
-export default MyApp;
+export default App;

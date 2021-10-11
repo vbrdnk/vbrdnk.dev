@@ -1,14 +1,5 @@
-@import 'variables';
-
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: Fira Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Droid Sans, Helvetica Neue, sans-serif;
-  color: hsla(0, 0%, 0%, 0.9);
-  height: 100vh;
-  font-weight: 400;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
@@ -16,28 +7,24 @@ body {
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
+a:focus,
+a:active {
+  outline: none !important;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.border-gradient {
+  border: 10px solid;
+  border-image-slice: 1 !important;
+  border-width: 5px;
+  border-radius: 6px;
 }
 
-* {
-  box-sizing: border-box;
+.border-gradient-purple {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+.border-gradient-green {
+  border-image-source: linear-gradient(to left, #00c853, #b2ff59);
 }
 
 aside {
@@ -48,6 +35,10 @@ time {
   font-family: Montserrat, sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 p {
   line-height: 2;
 }
@@ -56,28 +47,3 @@ blockquote > * {
   font-style: oblique;
   font-weight: 600;
 }
-
-// pre {
-//   float: left;
-//   min-width: 100%;
-//   overflow: auto;
-//   padding: 1.3125rem;
-
-//   code {
-//     color: #fff;
-//     background: none !important;
-//     font-feature-settings: normal;
-//     text-align: left;
-//     white-space: pre;
-//     word-spacing: normal;
-//     word-break: normal;
-//     word-wrap: normal;
-//     line-height: 1.5;
-//     margin-bottom: 0;
-//     -moz-tab-size: 4;
-//     tab-size: 4;
-//     -webkit-hyphens: none;
-//     -ms-hyphens: none;
-//     hyphens: none;
-//   }
-// }

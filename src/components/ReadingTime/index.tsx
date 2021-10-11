@@ -1,6 +1,6 @@
 import React from 'react';
 import { TimeIcon } from '@chakra-ui/icons';
-import { Flex, Text } from '@chakra-ui/react';
+import { Text, Flex } from '@chakra-ui/react';
 
 type ReadingTimeProps = {
   time: string;
