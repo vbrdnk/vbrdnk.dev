@@ -7,34 +7,21 @@ body {
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
-a:focus,
-a:active {
-  outline: none !important;
-}
-
 .border-gradient {
-  border: 10px solid;
+  border: 2px solid;
   border-image-slice: 1 !important;
-  border-width: 2px;
 }
 
 .border-gradient-purple {
   border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
 }
 
-.border-gradient-green {
-  border-image-source: linear-gradient(to left, #00c853, #b2ff59);
-}
-
-a {
-  text-decoration: none !important;
-}
-
-p {
-  line-height: 2;
-}
-
-blockquote > * {
-  font-style: oblique;
-  font-weight: 600;
+.avatar {
+  position: relative;
+  margin-right: 0.875rem;
+  margin-bottom: 0;
+  min-width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  overflow: hidden;
 }

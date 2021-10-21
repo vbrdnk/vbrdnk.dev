@@ -4,16 +4,15 @@ import Image from 'next/image';
 import { Heading, Text, Flex, Box, Link as ChakraLink } from '@chakra-ui/react';
 import Layout from '@/components/Layout';
 import avatarPic from 'public/static/images/avatar.jpg';
-import styles from '@/styles/Home.module.scss';
 
 const Home: NextPage = () => {
   return (
     <Layout>
       <Flex as="aside" mb={12}>
-        <div className={styles.avatar}>
+        <Box className='avatar'>
           <Image src={avatarPic} alt="Vladyslav Burdeniuk" layout="fill" />
-        </div>
-        <div>
+        </Box>
+        <Box>
           <Text fontWeight="bold" fontSize="1.2rem">
             Vladyslav Burdeniuk
           </Text>
@@ -22,7 +21,7 @@ const Home: NextPage = () => {
             <strong>Allset</strong>. This is my personal blog where I express myself with words and
             code.
           </Text>
-        </div>
+        </Box>
       </Flex>
       <Box mb={12}>
         <Heading mb={4}>Blog</Heading>

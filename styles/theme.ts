@@ -10,7 +10,20 @@ const theme = extendTheme({
       },
       a: {
         fontWeight: 700,
+        textDecoration: 'none !important'
       },
+      p: {
+        lineHeight: 2,
+      },
+      blockquote: {
+        fontStyle: 'oblique',
+        fontWeight: 700,
+      },
+    },
+  },
+  textStyles: {
+    base: {
+      lineHeight: 2,
     },
   },
   fonts: {

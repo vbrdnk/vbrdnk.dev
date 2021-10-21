@@ -1,3 +1,4 @@
+import React from 'react';
 import useSWR from 'swr';
 import { Text, Flex, Link } from '@chakra-ui/react';
 
@@ -10,7 +11,7 @@ const NowPlaying: React.FC = () => {
 
   return (
     <Flex alignItems="center">
-      <SpotifyIcon mr={2} fill="1ED760" />
+      <SpotifyIcon mr={2} fill="#1ED760" />
       <Flex alignItems="baseline" justifyContent="space-between">
         {data?.songUrl ? (
           <Link href={data.songUrl} target="_blank" rel="noopener noreferrer">
