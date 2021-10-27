@@ -1,3 +1,4 @@
+import React from 'react';
 import useSWR from 'swr';
 import { Heading, Text, VStack } from '@chakra-ui/react';
 
