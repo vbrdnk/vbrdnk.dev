@@ -12,5 +12,5 @@ export default async function handler(_req: NextApiRequest, res: NextApiResponse
     title: track.name,
   }));
 
-  return res.status(200).json({ tracks });
+  return res.status(200).json(tracks);
 }

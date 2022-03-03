@@ -1,13 +1,11 @@
 import React from 'react';
-import useSWR from 'swr';
 import { Heading, Text, VStack } from '@chakra-ui/react';
 
 import Track from '@/components/Track';
-import fetcher from '@/lib/fetcher';
-import { TopTracks as ITopTracks } from '@/lib/types';
+import useTopTracks from '@/hooks/useTopTracks';
 
 const TopTracks: React.FC = () => {
-  const { data } = useSWR<ITopTracks>('/api/top-tracks', fetcher);
+  const { data } = useTopTracks();
 
   if (!data) {
     return null;
@@ -23,7 +21,7 @@ const TopTracks: React.FC = () => {
         daily.
       </Text>
       <VStack spacing={4} alignItems="flex-start">
-        {data.tracks.map((track, index) => (
+        {data.map((track, index) => (
           <Track ranking={index + 1} key={track.songUrl} track={track} />
         ))}
       </VStack>

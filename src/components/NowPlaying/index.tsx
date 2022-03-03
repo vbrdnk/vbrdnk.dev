@@ -1,13 +1,11 @@
 import React from 'react';
-import useSWR from 'swr';
 import { Text, Flex, Link } from '@chakra-ui/react';
 
-import fetcher from '@/lib/fetcher';
-import { NowPlayingSong } from '@/lib/types';
 import SpotifyIcon from '@/styles/icons/spotify';
+import useNowPlaying from '@/hooks/useNowPlaying';
 
 const NowPlaying: React.FC = () => {
-  const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
+  const { data } = useNowPlaying();
 
   return (
     <Flex alignItems="center">
