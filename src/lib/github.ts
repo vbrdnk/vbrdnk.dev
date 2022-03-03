@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest';
 import { GetResponseDataTypeFromEndpointMethod } from '@octokit/types';
 
-const octokitClient = new Octokit({ auth: process.env.GITHUB_ACCES_TOKEN });
+const octokitClient = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
 
 export type UserRepositoriesResponse = GetResponseDataTypeFromEndpointMethod<
   typeof octokitClient.rest.repos.listForUser
