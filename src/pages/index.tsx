@@ -10,13 +10,13 @@ const Home: NextPage = () => {
     <Layout>
       <Flex as="aside" mb={12}>
         <Box className='avatar'>
-          <Image src={avatarPic} alt="Vladyslav Burdeniuk" layout="fill" />
+          <Image src={avatarPic} alt='Vladyslav Burdeniuk' layout='fill' />
         </Box>
         <Box>
-          <Text fontWeight="bold" fontSize="1.2rem">
-            Vladyslav Burdeniuk
+          <Text fontWeight='bold' fontSize='1.2rem'>
+            Vladyslav Burdeniuk 🇺🇦
           </Text>
-          <Text maxW="400px">
+          <Text maxW='400px'>
             Creator and developer currently working as the Senior Software Engineer at{' '}
             <strong>Allset</strong>. This is my personal blog where I express myself with words and
             code.
