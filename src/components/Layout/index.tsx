@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Flex } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-type LayoutProps = {
+type LayoutProps = PropsWithChildren & {
   type?: string;
   title?: string;
   description?: string;

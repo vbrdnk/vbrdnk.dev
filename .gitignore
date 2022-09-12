@@ -21,6 +21,7 @@
 
 #code editors
 /.idea
+/.vscode
 
 # debug
 npm-debug.log*
