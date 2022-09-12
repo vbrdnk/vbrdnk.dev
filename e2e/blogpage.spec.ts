@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({page}) => {
-  await page.goto('https://vbrdnk.dev/blog');
+  await page.goto('/blog');
 });
 
 test('blogpage has proper title and heading', async ({ page }) => {
