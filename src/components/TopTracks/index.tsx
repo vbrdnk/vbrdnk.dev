@@ -14,7 +14,7 @@ const TopTracks: React.FC = () => {
   return (
     <>
       <Heading as="h2" mb={4}>
-        Top Tracks
+        Top tracks
       </Heading>
       <Text mb={4}>
         Curious what I&apos;m currently jamming to? Here&apos;s my top tracks on Spotify updated
