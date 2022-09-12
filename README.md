@@ -1,6 +1,6 @@
 Personal [blog](https://vbrdnk.dev) where I share my knowledge and thoughts on different (mostly front-end related) technical topics.
 
-# vbrdnk.dev
+# vbrdnk.dev ![example workflow](https://github.com/vbrdnk/vbrdnk.dev/actions/workflows/playwright.yml/badge.svg)
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Deployment**: [Vercel](https://vercel.com)
