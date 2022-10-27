@@ -5,9 +5,6 @@ const theme = extendTheme({
   useSystemColorMode: true,
   styles: {
     global: {
-      '.chakra-link': {
-        color: '#d23669 !important',
-      },
       a: {
         fontWeight: 700,
         textDecoration: 'none !important'
