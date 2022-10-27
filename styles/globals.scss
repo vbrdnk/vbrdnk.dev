@@ -19,9 +19,13 @@ body {
 .avatar {
   position: relative;
   margin-right: 0.875rem;
-  margin-bottom: 0;
-  min-width: 3.5rem;
+  width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.link {
+  color: #d23669 !important;
+  text-decoration: none;
 }

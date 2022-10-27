@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heading, Text, Flex, Box, Link as ChakraLink } from '@chakra-ui/react';
+import { Heading, Text, Flex, Box } from '@chakra-ui/react';
 import Layout from '@/components/Layout';
 import avatarPic from 'public/static/images/avatar.jpg';
 
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <Layout>
       <Flex as='aside' mb={12}>
         <Box className='avatar'>
-          <Image src={avatarPic} alt='Vladyslav Burdeniuk' layout='fill' />
+          <Image src={avatarPic} alt='Vladyslav Burdeniuk' placeholder='blur' />
         </Box>
         <Box>
           <Text fontWeight='bold' fontSize='1.2rem'>
@@ -26,15 +26,15 @@ const Home: NextPage = () => {
       <Box mb={12}>
         <Heading mb={4}>Blog</Heading>
         <Text mb={4}>I write mostly about web development and tech careers.</Text>
-        <Link href='/blog' passHref>
-          <ChakraLink>Read all posts &rarr;</ChakraLink>
+        <Link className='link' href='/blog' passHref>
+          Read all posts &rarr;
         </Link>
       </Box>
       <Box>
         <Heading mb={4}>Dashboard</Heading>
         <Text mb={4}>Want to see some interesting data? Check out my dashboard.</Text>
-        <Link href='/dashboard' passHref>
-          <ChakraLink>Go to dashboard &rarr;</ChakraLink>
+        <Link className='link' href='/dashboard' passHref>
+          Go to dashboard &rarr;
         </Link>
       </Box>
     </Layout>

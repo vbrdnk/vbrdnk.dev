@@ -11,7 +11,7 @@ type GithubRepoProps = {
 const GithubRepo: React.FC<GithubRepoProps> = ({ repo }) => {
   return (
     <Box p="6" className="border-gradient border-gradient-purple" w="100%">
-      <Link mt="1" href={repo.html_url} isExternal>
+      <Link mt="1" href={repo.html_url} className='link' isExternal>
         {repo.name} <ExternalLinkIcon />
       </Link>
       <Text mt="1" color="gray.500" fontSize="small">
