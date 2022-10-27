@@ -11,18 +11,16 @@ type GithubReposProps = {
 const GithubRepos: React.FC<GithubReposProps> = ({ repos }) => {
   return (
     <>
-      <Heading as="h2" mb={4}>
+      <Heading as='h2' mb={4}>
         Top repositories
       </Heading>
       <Text mb={4}>
         Curious what I&apos;m currently working on? Here&apos;s a few repositories on Github.
       </Text>
-      <VStack spacing={8} maxW="40rem">
+      <VStack spacing={8} maxW='40rem'>
         {repos
           .filter(repo => !repo.fork)
-          .map(repo => {
-            return <GithubRepo key={repo.id} repo={repo as UserRepository} />;
-          })}
+          .map(repo => <GithubRepo key={repo.id} repo={repo as UserRepository} />)}
       </VStack>
     </>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconButton, Flex } from '@chakra-ui/react';
-import ColorModeToggle from '@/components/Toggle';
 
+import ColorModeToggle from '@/components/Toggle';
 import Nav from '@/components/Nav';
 
 const Header: React.FC = () => {

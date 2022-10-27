@@ -14,7 +14,7 @@ const NavItem: React.FC<NavItemProps> = ({ href, text }) => {
 
   return (
     <Link href={href} passHref>
-      <Button as="a" variant="ghost" isActive={isActive}>
+      <Button variant='ghost' isActive={isActive}>
         {text}
       </Button>
     </Link>
