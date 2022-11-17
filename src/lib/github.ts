@@ -11,6 +11,11 @@ export type UserRepository = GetResponseDataTypeFromEndpointMethod<
   typeof octokitClient.rest.repos.get
 >;
 
+export type GithubAnalytics = {
+  followers: number;
+  reposCount: number;
+}
+
 export const getGithubUser = async () => {
   const { data } = await octokitClient.rest.users.getByUsername({ username: 'vbrdnk' });
 
@@ -25,5 +30,14 @@ export const getGithubRepos = async (): Promise<UserRepositoriesResponse> => {
 
   return data;
 };
+
+export const getGithubAnalytics = async (): Promise<GithubAnalytics> => {
+  const user = await getGithubUser();
+
+  return {
+    followers: user?.followers || 0,
+    reposCount: user?.public_repos || 0,
+  };
+}
 
 export default octokitClient;

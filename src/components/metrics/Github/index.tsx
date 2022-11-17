@@ -3,18 +3,16 @@ import { Flex } from '@chakra-ui/react';
 
 import GithubRepos from '@/components/metrics/Github/GithubRepos';
 import MetricCard from '@/components/metrics/Card';
-import { UserRepositoriesResponse } from '@/lib/github';
-import useGithubAnalytics from '@/hooks/useGithubAnalytics';
+import { UserRepositoriesResponse, GithubAnalytics } from '@/lib/github';
 
 type GitHubProps = {
   repos: UserRepositoriesResponse;
+  analytics: GithubAnalytics;
 };
 
-const GitHub: React.FC<GitHubProps> = ({ repos }) => {
-  const { data } = useGithubAnalytics();
-  const followers = data?.followers || 0;
-  const reposCount = data?.repos || 0;
+const GitHub: React.FC<GitHubProps> = ({ repos, analytics }) => {
   const link = 'https://github.com/vbrdnk';
+  const { followers, reposCount } = analytics;
 
   return (
     <Flex direction="column">
