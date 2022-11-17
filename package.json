@@ -8,7 +8,9 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e": "npx playwright test",
+    "e2e-report": "npx playwright show-report"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.9",

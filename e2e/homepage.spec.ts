@@ -8,14 +8,14 @@ test('homepage has proper title and navigation links', async ({ page }) => {
   await expect(page).toHaveTitle(/{code•aligned}/);
 
   // check nav has correct nav
-  const navLinks = page.locator('nav a.chakra-button');
+  const navLinks = page.locator('nav button.chakra-button');
   await expect(navLinks).toHaveCount(3);
   await expect(navLinks).toHaveText(['Home', 'Dashboard', 'Blog']);
 
   // check all nav links are correct
-  const homeLink = page.locator('a.chakra-button', { hasText: 'Home' });
-  const dashboardLink = page.locator('a.chakra-button', { hasText: 'Dashboard' });
-  const blogLink = page.locator('a.chakra-button', { hasText: 'Blog' });
+  const homeLink = page.locator('button.chakra-button a', { hasText: 'Home' });
+  const dashboardLink = page.locator('button.chakra-button a', { hasText: 'Dashboard' });
+  const blogLink = page.locator('button.chakra-button a', { hasText: 'Blog' });
 
   await expect(homeLink).toHaveAttribute('href', '/');
   await expect(dashboardLink).toHaveAttribute('href', '/dashboard');

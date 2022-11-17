@@ -13,11 +13,11 @@ const NavItem: React.FC<NavItemProps> = ({ href, text }) => {
   const isActive = router.asPath === href;
 
   return (
-    <Link href={href} passHref>
-      <Button variant='ghost' isActive={isActive}>
+    <Button variant='ghost' isActive={isActive}>
+      <Link href={href} passHref>
         {text}
-      </Button>
-    </Link>
+      </Link>
+    </Button>
   );
 };
 

@@ -1,16 +1,17 @@
 import type { NextPage, GetStaticProps } from 'next';
 import { Heading, Text, Box } from '@chakra-ui/react';
 
-import { getGithubRepos, UserRepositoriesResponse } from '@/lib/github';
+import { getGithubRepos, getGithubAnalytics, UserRepositoriesResponse, GithubAnalytics } from '@/lib/github';
 import Layout from '@/components/Layout';
 import TopTracks from '@/components/TopTracks';
 import GitHub from '@/components/metrics/Github';
 
 type HomePageProps = {
   repos: UserRepositoriesResponse;
+  analytics: GithubAnalytics;
 };
 
-const Dashboard: NextPage<HomePageProps> = ({ repos }) => {
+const Dashboard: NextPage<HomePageProps> = ({ repos, analytics }) => {
   return (
     <Layout
       title="Dashboard – Vladyslav Burdeniuk"
@@ -25,7 +26,7 @@ const Dashboard: NextPage<HomePageProps> = ({ repos }) => {
           </Text>
         </Box>
         <Box mb={12}>
-          <GitHub repos={repos} />
+          <GitHub repos={repos} analytics={analytics} />
         </Box>
         <Box>
           <TopTracks />
@@ -39,5 +40,6 @@ export default Dashboard;
 
 export const getStaticProps: GetStaticProps = async () => {
   const repos = await getGithubRepos();
-  return { props: { repos } };
+  const analytics = await getGithubAnalytics();
+  return { props: { repos, analytics }, revalidate: 60 * 60 * 24};
 };
