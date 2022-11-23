@@ -28,6 +28,7 @@ const GlobalStyle = () => {
             flex-direction: column;
             min-height: 100vh;
             ${isFetching && { opacity: 0.7 }}
+          }
         `}
       />{' '}
     </>

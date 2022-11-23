@@ -7,7 +7,7 @@ import styles from './ColorModeToggle.module.scss';
 const ColorModeToggle: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const Icon = colorMode === 'light' ? MoonIcon : SunIcon;
-  return <Icon onClick={toggleColorMode} className={styles.toggle} />;
+  return <Icon onClick={toggleColorMode} className={styles.toggle} data-testid='color-theme-toggle' />;
 };
 
 export default ColorModeToggle;
