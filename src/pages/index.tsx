@@ -17,8 +17,8 @@ const Home: NextPage = () => {
             Vladyslav Burdeniuk 🇺🇦
           </Text>
           <Text maxW='400px'>
-            Creator and developer currently working as the Senior Software Engineer at{' '}
-            <strong>Allset</strong>. This is my personal blog where I express myself with words and
+            Creator and developer currently working as the Senior Web Engineer at{' '}
+            <b>Spotify</b>. This is my personal blog where I express myself with words and
             code.
           </Text>
         </Box>
