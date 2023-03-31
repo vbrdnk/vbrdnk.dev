@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { getMDXComponent } from 'mdx-bundler/client';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading, Flex } from '@chakra-ui/react';
 
-import components from '@/components/MDXComponents';
-import Layout from '@/components/Layout';
-import ReadingTime from '@/components/ReadingTime';
+import components from '../../app/MDXComponents';
+import Layout from '../../app/Layout';
+import ReadingTime from '../../app/ReadingTime';
 import { getFiles, getFileBySlug } from '@/lib/mdx';
 import { FileType, FrontMatterResponse } from '@/lib/types';
 
