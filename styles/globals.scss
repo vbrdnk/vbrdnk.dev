@@ -19,7 +19,7 @@ body {
 .avatar {
   position: relative;
   margin-right: 0.875rem;
-  width: 3.5rem;
+  min-width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   overflow: hidden;

@@ -8,7 +8,7 @@ type NavItemProps = {
   text: string;
 };
 
-const NavItem: React.FC<NavItemProps> = ({ href, text }) => {
+const NavItem = ({ href, text }: NavItemProps): JSX.Element => {
   const router = useRouter();
   const isActive = router.asPath === href;
 

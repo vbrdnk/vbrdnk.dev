@@ -3,8 +3,8 @@ import type { NextPage, GetStaticProps } from 'next';
 import { Heading, Box, Flex } from '@chakra-ui/react';
 import { parseISO, compareDesc } from 'date-fns';
 
-import Layout from '@/components/Layout';
-import ArticleCard from '@/components/ArticleCard';
+import Layout from '../app/Layout';
+import ArticleCard from '../app/ArticleCard';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 import { FileType, Post } from '@/lib/types';
 

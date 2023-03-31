@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Code, Heading } from '@chakra-ui/react';
 
-const CustomLink: React.FC = (props: any) => {
+const CustomLink = (props: any): JSX.Element => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 

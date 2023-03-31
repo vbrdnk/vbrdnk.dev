@@ -1,12 +1,12 @@
 import React from 'react';
 import { VStack, Divider } from '@chakra-ui/react';
 
-import SocialLinks from '@/components/SocialLinks/SocialLinks';
+import SocialLinks from './SocialLinks';
 import NowPlaying from '@/components/NowPlaying';
 
-const Footer: React.FC = () => {
+const Footer = (): JSX.Element => {
   return (
-    <VStack as="footer" align="flex-start" spacing={6} mt={8}>
+    <VStack as='footer' align='flex-start' spacing={6}>
       <Divider />
       <NowPlaying />
       <SocialLinks />

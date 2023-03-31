@@ -6,10 +6,10 @@ type DateProps = {
   date: string;
 };
 
-const Date: React.FC<DateProps> = ({ date }) => {
+const Date = ({ date }: DateProps): JSX.Element => {
   return (
     <time dateTime={date}>
-      <Text fontWeight="bold">{format(parseISO(date), 'MMMM d, yyyy')} </Text>
+      <Text fontWeight='bold'>{format(parseISO(date), 'MMMM d, yyyy')} </Text>
     </time>
   );
 };

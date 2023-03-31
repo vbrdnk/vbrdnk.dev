@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Heading } from '@chakra-ui/react';
 import { Flex, Text } from '@chakra-ui/layout';
 
-import Layout from '@/components/Layout';
+import Layout from '../app/Layout';
 
 const NotFound: NextPage = () => {
   return (

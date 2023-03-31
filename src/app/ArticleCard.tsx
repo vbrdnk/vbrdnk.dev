@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Heading, Text, Flex } from '@chakra-ui/react';
 
-import Date from '@/components/Date';
+import Date from './Date';
 
 type ArticleProps = {
   title: string;
@@ -11,10 +11,10 @@ type ArticleProps = {
   createdAt: string;
 };
 
-const ArticleCard: React.FC<ArticleProps> = ({ title, description, slug, createdAt }) => {
+const ArticleCard = ({ title, description, slug, createdAt }: ArticleProps): JSX.Element => {
   return (
-    <Flex as="article" direction="column">
-      <Flex as="header" direction="column">
+    <Flex as='article' direction='column'>
+      <Flex as='header' direction='column'>
         <Heading mb={2}>
           <Link href={`/blog/${slug}`} className='link' passHref>
             {title}

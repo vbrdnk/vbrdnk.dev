@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Heading, Text, Flex, Box } from '@chakra-ui/react';
-import Layout from '@/components/Layout';
+import Layout from '../app/Layout';
 import avatarPic from 'public/static/images/avatar.jpg';
 
 const Home: NextPage = () => {
@@ -10,16 +10,20 @@ const Home: NextPage = () => {
     <Layout>
       <Flex as='aside' mb={12}>
         <Box className='avatar'>
-          <Image src={avatarPic} alt='Vladyslav Burdeniuk' placeholder='blur' />
+          <Image
+            src={avatarPic}
+            alt='Vladyslav Burdeniuk'
+            placeholder='blur'
+            fill
+          />
         </Box>
         <Box>
           <Text fontWeight='bold' fontSize='1.2rem'>
             Vladyslav Burdeniuk 🇺🇦
           </Text>
           <Text maxW='400px'>
-            Creator and developer currently working as the Senior Web Engineer at{' '}
-            <b>Spotify</b>. This is my personal blog where I express myself with words and
-            code.
+            I am a creator and developer who currently works as a Senior Web Engineer at <b>Spotify</b>. This is my
+            personal blog, where I express myself through both words and code.
           </Text>
         </Box>
       </Flex>
@@ -28,13 +32,6 @@ const Home: NextPage = () => {
         <Text mb={4}>I write mostly about web development and tech careers.</Text>
         <Link className='link' href='/blog' passHref>
           Read all posts &rarr;
-        </Link>
-      </Box>
-      <Box>
-        <Heading mb={4}>Dashboard</Heading>
-        <Text mb={4}>Want to see some interesting data? Check out my dashboard.</Text>
-        <Link className='link' href='/dashboard' passHref>
-          Go to dashboard &rarr;
         </Link>
       </Box>
     </Layout>
