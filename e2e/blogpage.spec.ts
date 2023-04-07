@@ -12,5 +12,5 @@ test('blogpage has proper title and heading', async ({ page }) => {
 
 test('blogpage has correct number of articles', async ({ page }) => {
   const articles = page.locator('article');
-  await expect(articles).toHaveCount(2);
+  await expect(articles).toHaveCount(3);
 });
