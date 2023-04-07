@@ -18,6 +18,9 @@ const SocialLinks = (): JSX.Element => {
       <Link isExternal className='link' href='https://www.linkedin.com/in/vladyslav-burdeniuk/' rel='noreferrer'>
         linkedin
       </Link>
+      <Link isExternal className='link' href='https://twitter.com/vbrdnk/' rel='noreferrer'>
+        twitter
+      </Link>
     </HStack>
   );
 };
