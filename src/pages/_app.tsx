@@ -4,6 +4,7 @@ import { css, Global } from '@emotion/react';
 import { DefaultSeo } from 'next-seo';
 import { QueryClient, QueryClientProvider, useIsFetching } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { Analytics } from '@vercel/analytics/react';
 
 import theme from '@/styles/theme';
 import '@/styles/globals.scss';
@@ -44,6 +45,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <DefaultSeo {...SEO} />
         <GlobalStyle />
         <Component {...pageProps} />
+        <Analytics />
       </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={true} />
     </QueryClientProvider>
