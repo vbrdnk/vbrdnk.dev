@@ -37,7 +37,7 @@ const BlogPost: NextPage<BlogPostPageProps> = ({ code, frontMatter }) => {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Flex as="article" display="column">
+      <Flex as="article" display="column" mb={10}>
         <Heading mb={4}>{blogPostTitle}</Heading>
         <ReadingTime time={blogPostReadingTime} />
 

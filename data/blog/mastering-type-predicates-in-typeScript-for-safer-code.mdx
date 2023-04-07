@@ -1,0 +1,47 @@
+---
+title: 'Mastering Type Predicates in TypeScript for Safer Code'
+createdAt: '2023-04-07'
+description: 'Learn how to use type predicates in TypeScript to narrow down the type of a variable and write stronger, bug-free code. This guide covers everything you need to know about TypeScript type predicates and how they can help you write more expressive and safer code'
+---
+
+TypeScript is a strongly-typed superset of JavaScript that allows developers to write code with more confidence and fewer bugs. One feature that sets TypeScript apart from JavaScript is its ability to use type predicates to narrow down the type of a variable within a certain scope.
+
+<br />
+
+Type predicates are a way to check the type of a variable at runtime and then use that knowledge to narrow down its type for the rest of the code within a certain scope. This can be particularly useful when dealing with union types, where a variable could have multiple possible types.
+
+<br />
+
+Here's an example of a type predicate in TypeScript:
+
+<Image
+  alt={'String predicate type'}
+  width={1400}
+  height={350}
+  layout="responsive"
+  src={'/static/images/ts-type-predicates/isString-predicate.png'}
+/>
+
+In this example, the `isString` function takes an unknown value and returns a boolean indicating whether or not it is a string. The function also uses the `value is string` syntax to tell TypeScript that if the function returns true, then the value is definitely a string. This type predicate allows TypeScript to narrow down the type of value to a string within the if block.
+
+<br />
+
+Type predicates can also be used with type guards, which are conditional statements that check the type of a variable and execute different code based on the result. Here's an example:
+
+<Image
+  alt={'String predicate type'}
+  width={1400}
+  height={350}
+  layout="responsive"
+  src={'/static/images/ts-type-predicates/isCat-predicate.png'}
+/>
+
+In this example, the `isCat` function takes a `Cat` or `Dog` and returns a boolean indicating whether or not it is a `Cat`. The `pet is Cat` syntax is used to tell TypeScript that if the function returns true, then the pet variable is definitely a `Cat`. This allows TypeScript to narrow down the type of pet within the if block, and execute the appropriate code based on whether pet is a `Cat` or a `Dog`.
+
+<br />
+
+Type predicates can be a powerful tool for narrowing down the type of a variable in TypeScript. They allow developers to write code that is more expressive and easier to reason about, reducing the risk of bugs and making code easier to maintain.
+
+<br />
+
+Keep in touch and happy coding.
