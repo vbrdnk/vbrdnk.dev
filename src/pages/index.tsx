@@ -2,8 +2,10 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Heading, Text, Flex, Box } from '@chakra-ui/react';
-import Layout from '../app/Layout';
 import avatarPic from 'public/static/images/avatar.jpg';
+
+import Layout from '../app/Layout';
+import { PlaylistOfTheWeek } from '../app/PlaylistOfTheWeek';
 
 const Home: NextPage = () => {
   return (
@@ -33,6 +35,10 @@ const Home: NextPage = () => {
         <Link className='link' href='/blog' passHref>
           Read all posts &rarr;
         </Link>
+      </Box>
+      <Box mb={12}>
+        <Heading mb={4}>Work playlist</Heading>
+        <PlaylistOfTheWeek />
       </Box>
     </Layout>
   );
