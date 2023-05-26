@@ -9,7 +9,7 @@ type DateProps = {
 const Date = ({ date }: DateProps): JSX.Element => {
   return (
     <time dateTime={date}>
-      <Text fontWeight='bold'>{format(parseISO(date), 'MMMM d, yyyy')} </Text>
+      <Text fontWeight='bold' data-testid='date'>{format(parseISO(date), 'MMMM d, yyyy')} </Text>
     </time>
   );
 };

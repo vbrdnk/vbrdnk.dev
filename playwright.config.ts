@@ -1,15 +1,16 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
+import path from 'path';
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './e2e',
+  testDir: path.join(__dirname, 'e2e'),
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
-    timeout: 5000
+    timeout: 5000,
   },
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -43,7 +44,7 @@ const config: PlaywrightTestConfig = {
   ],
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn dev',
+    command: 'npm run dev',
     port: 3000,
   },
 };
