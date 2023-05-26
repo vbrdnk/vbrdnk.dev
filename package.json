@@ -9,9 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test": "jest --watch",
-    "e2e": "npx playwright test",
-    "e2e-report": "npx playwright show-report"
+    "test:unit": "jest --ci --maxWorkers=50%",
+    "test:e2e": "npx playwright test",
+    "test:e2e:report": "npx playwright show-report"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.9",
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.25.2",
+    "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/node": "18.7.16",

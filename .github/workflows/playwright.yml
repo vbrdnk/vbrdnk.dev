@@ -29,3 +29,23 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+
+      # Speed up subsequent runs with caching
+      - name: Cache node modules
+        uses: actions/cache@v2
+
+      # Install required deps for action
+      - name: Install Dependencies
+        run: npm install
+
+      # Finally, run our tests
+      - name: Run unit tests
+        run: npm test:unit

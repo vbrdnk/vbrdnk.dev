@@ -37,6 +37,9 @@
       "@/hooks/*": [
         "src/hooks/*"
       ],
+      "@/tests/*": [
+        "src/tests/*"
+      ],
       "@/styles/*": [
         "styles/*"
       ]
