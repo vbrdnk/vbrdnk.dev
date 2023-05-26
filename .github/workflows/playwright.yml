@@ -36,11 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.x"
-
-      # Speed up subsequent runs with caching
-      - name: Cache node modules
-        uses: actions/cache@v2
+          node-version: '16.x'
 
       # Install required deps for action
       - name: Install Dependencies
