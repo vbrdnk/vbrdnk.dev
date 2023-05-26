@@ -18,11 +18,11 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Install dependencies
-        run: yarn
+        run: npm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: HOST=https://staging.vbrdnk.dev/ yarn playwright test
+        run: HOST=https://staging.vbrdnk.dev/ npx playwright test
       - uses: actions/upload-artifact@v2
         if: always()
         with:
@@ -40,8 +40,8 @@ jobs:
 
       # Install required deps for action
       - name: Install Dependencies
-        run: yarn
+        run: npm install
 
       # Finally, run our tests
       - name: Run unit tests
-        run: yarn test:unit
+        run: npm run test:unit
