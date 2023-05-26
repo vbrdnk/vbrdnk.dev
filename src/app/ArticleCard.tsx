@@ -2,18 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { Heading, Text, Flex } from '@chakra-ui/react';
 
+import { Post } from '@/lib/types';
 import Date from './Date';
 
-type ArticleProps = {
-  title: string;
-  description?: string;
-  slug: string;
-  createdAt: string;
-};
+export type ArticleProps = Post;
 
 const ArticleCard = ({ title, description, slug, createdAt }: ArticleProps): JSX.Element => {
   return (
-    <Flex as='article' direction='column'>
+    <Flex as='article' direction='column' data-testid={slug}>
       <Flex as='header' direction='column'>
         <Heading mb={2}>
           <Link href={`/blog/${slug}`} className='link' passHref>
