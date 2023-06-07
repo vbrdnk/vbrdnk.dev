@@ -13,11 +13,11 @@ const NavItem = ({ href, text }: NavItemProps): JSX.Element => {
   const isActive = router.asPath === href;
 
   return (
-    <Button variant='ghost' isActive={isActive}>
-      <Link href={href} passHref>
+    <Link href={href} passHref>
+      <Button variant='ghost' isActive={isActive}>
         {text}
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 };
 
