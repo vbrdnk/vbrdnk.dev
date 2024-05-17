@@ -1,9 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   poweredByHeader: false,
-  experimental: {
-    appDir: true,
-  },
   async redirects() {
     return [
       {

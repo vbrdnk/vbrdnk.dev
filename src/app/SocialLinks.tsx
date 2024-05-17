@@ -1,5 +1,5 @@
 import React from 'react';
-import { HStack, Link } from '@chakra-ui/layout';
+import { HStack, Link } from '@chakra-ui/react';
 
 const SocialLinks = (): JSX.Element => {
   return (

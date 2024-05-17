@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { Heading } from '@chakra-ui/react';
-import { Flex, Text } from '@chakra-ui/layout';
+import { Flex, Text } from '@chakra-ui/react';
 
 import Layout from '../app/Layout';
 
