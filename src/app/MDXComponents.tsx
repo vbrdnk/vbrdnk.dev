@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Code, Heading, OrderedList, ListItem } from '@chakra-ui/react';
@@ -23,7 +25,7 @@ const MDXComponents = {
   code: Code,
   Heading,
   OrderedList,
-  ListItem
+  ListItem,
 };
 
 export default MDXComponents;

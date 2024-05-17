@@ -5,9 +5,9 @@ import NavItem from './NavItem';
 
 const Nav = (): JSX.Element => {
   return (
-    <Stack direction='row' spacing={1} align='center' as='nav'>
-      <NavItem href='/' text='Home' />
-      <NavItem href='/blog' text='Blog' />
+    <Stack direction="row" spacing={1} align="center" as="nav">
+      <NavItem href="/" text="Home" />
+      <NavItem href="/blog" text="Blog" />
     </Stack>
   );
 };

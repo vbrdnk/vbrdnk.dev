@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { Button } from '@chakra-ui/react';
+import { Link } from '@chakra-ui/next-js';
+import { usePathname } from 'next/navigation';
 
 type NavItemProps = {
   href: string;
@@ -9,12 +11,12 @@ type NavItemProps = {
 };
 
 const NavItem = ({ href, text }: NavItemProps): JSX.Element => {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
-    <Link href={href} passHref>
-      <Button variant='ghost' isActive={isActive}>
+    <Link href={href}>
+      <Button variant="ghost" isActive={isActive}>
         {text}
       </Button>
     </Link>

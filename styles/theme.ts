@@ -7,7 +7,7 @@ const theme = extendTheme({
     global: {
       a: {
         fontWeight: 700,
-        textDecoration: 'none !important'
+        textDecoration: 'none !important',
       },
       p: {
         lineHeight: 2,
@@ -25,8 +25,8 @@ const theme = extendTheme({
   },
   fonts: {
     ...ChakraTheme.fonts,
-    heading: 'Montserrat',
-    body: `IBM Plex Sans,-apple-system,BlinkMacSystemFont`,
+    heading: 'var(--font-montserrat)',
+    body: 'var(--font-plex-sans)',
   },
   fontWeight: {
     normal: 400,

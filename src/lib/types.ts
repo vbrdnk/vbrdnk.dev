@@ -1,11 +1,5 @@
 import { ReadTimeResults } from 'reading-time';
 
-export type Song = {
-  songUrl: string;
-  artist: string;
-  title: string;
-};
-
 export type NowPlayingSong = {
   album: string;
   albumImageUrl: string;
@@ -14,8 +8,6 @@ export type NowPlayingSong = {
   songUrl: string;
   title: string;
 };
-
-export type TopTracks = Song[];
 
 export type Post = {
   title: string;
@@ -36,9 +28,4 @@ export type FrontMatterResponse = {
     slug: string | null;
     [key: string]: any;
   };
-};
-
-export type GitHubAnalytics = {
-  followers: number;
-  repos: number;
 };

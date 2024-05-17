@@ -12,4 +12,3 @@ describe('Now Playing ', () => {
     expect(screen.getByText('Not Playing')).toBeInTheDocument();
   });
 });
-

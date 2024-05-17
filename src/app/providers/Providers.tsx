@@ -1,15 +1,14 @@
-import type { AppProps } from 'next/app';
+'use client';
+
+import React from 'react';
 import { ChakraProvider, CSSReset } from '@chakra-ui/react';
-import { css, Global } from '@emotion/react';
-import { DefaultSeo } from 'next-seo';
 import { QueryClient, QueryClientProvider, useIsFetching } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-import { Analytics } from '@vercel/analytics/react';
-
 import theme from '@/styles/theme';
-import '@/styles/globals.scss';
+import { Analytics } from '@vercel/analytics/react';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { css, Global } from '@emotion/react';
 
-import SEO from 'next-seo.config';
+const queryClient = new QueryClient();
 
 const GlobalStyle = () => {
   const isFetching = useIsFetching();
@@ -36,20 +35,15 @@ const GlobalStyle = () => {
   );
 };
 
-const queryClient = new QueryClient();
-
-const App = ({ Component, pageProps }: AppProps) => {
+export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <DefaultSeo {...SEO} />
         <GlobalStyle />
-        <Component {...pageProps} />
+        {children}
         <Analytics />
       </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={true} />
     </QueryClientProvider>
   );
-};
-
-export default App;
+}
