@@ -1,17 +1,29 @@
 import React from 'react';
 import { ColorModeScript, Flex } from '@chakra-ui/react';
 
-import Header from './Header';
-import Footer from './Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Providers } from './providers/Providers';
 
 import theme from '@/styles/theme';
 import '@/styles/globals.scss';
 import { fonts } from './fonts';
 
+const title = '{code•aligned}';
+const description = 'Personal blog by Vladyslav Burdeniuk. I express myself with words and code.';
+
 export const metadata = {
-  title: 'Page – Vladyslav Burdeniuk',
-  description: 'Thoughts on the programming, tech, music, and my personal life.',
+  title,
+  description,
+  // canonical: 'https://vbrdnk.dev',
+  // author: 'Vladyslav Burdeniuk',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IE',
+    url: 'https://vbrdnk.dev',
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

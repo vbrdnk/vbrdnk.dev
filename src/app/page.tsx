@@ -1,12 +1,11 @@
-import type { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Heading, Text, Flex, Box } from '@chakra-ui/react';
 import avatarPic from '../../public/static/images/avatar.jpg';
 
-import { PlaylistOfTheWeek } from './PlaylistOfTheWeek';
+import { PlaylistOfTheWeek } from '@/components/PlaylistOfTheWeek';
 
-const Home: NextPage = () => {
+export default function HomePage() {
   return (
     <>
       <Flex as="aside" mb={12}>
@@ -25,18 +24,23 @@ const Home: NextPage = () => {
         </Box>
       </Flex>
       <Box mb={12}>
-        <Heading mb={4}>Blog</Heading>
+        <Heading mb={4}>blog</Heading>
         <Text mb={4}>I write mostly about web development and tech careers.</Text>
-        <Link className="link" href="/blog" passHref>
-          Read all posts &rarr;
+        <Link className="link" href="/blog">
+          read all posts &rarr;
         </Link>
       </Box>
       <Box mb={12}>
-        <Heading mb={4}>Work playlist</Heading>
+        <Heading mb={4}>experience</Heading>
+        <Text mb={4}>Wanna know more about my experience?</Text>
+        <Link className="link" target="_blank" href="https://read.cv/vbrdnk">
+          check my cv &rarr;
+        </Link>
+      </Box>
+      <Box mb={12}>
+        <Heading mb={4}>work playlist</Heading>
         <PlaylistOfTheWeek />
       </Box>
     </>
   );
-};
-
-export default Home;
+}
