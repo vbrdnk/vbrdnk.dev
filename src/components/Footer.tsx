@@ -1,9 +1,9 @@
+import { Divider, VStack } from '@chakra-ui/react';
 import React from 'react';
-import { VStack, Divider } from '@chakra-ui/react';
 
-import SocialLinks from './SocialLinks';
+import { SocialLinks } from './SocialLinks';
 
-const Footer = (): JSX.Element => {
+export const Footer = (): JSX.Element => {
   return (
     <VStack as="footer" align="flex-start" spacing={6}>
       <Divider />
@@ -11,5 +11,3 @@ const Footer = (): JSX.Element => {
     </VStack>
   );
 };
-
-export default Footer;

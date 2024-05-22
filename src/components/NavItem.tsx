@@ -1,16 +1,17 @@
 'use client';
 
-import React from 'react';
-import { Button } from '@chakra-ui/react';
-import { Link } from '@chakra-ui/next-js';
 import { usePathname } from 'next/navigation';
 
-type NavItemProps = {
+import { Link } from '@chakra-ui/next-js';
+import { Button } from '@chakra-ui/react';
+import React from 'react';
+
+type NavigationItemProps = {
   href: string;
   text: string;
 };
 
-const NavItem = ({ href, text }: NavItemProps): JSX.Element => {
+export const NavigationItem = ({ href, text }: NavigationItemProps): JSX.Element => {
   const pathname = usePathname();
   const isActive = pathname === href;
 
@@ -22,5 +23,3 @@ const NavItem = ({ href, text }: NavItemProps): JSX.Element => {
     </Link>
   );
 };
-
-export default NavItem;

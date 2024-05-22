@@ -1,13 +1,12 @@
-import { join } from 'path';
 import { readFileSync, readdirSync } from 'fs';
-import { bundleMDX } from 'mdx-bundler';
 import matter from 'gray-matter';
+import { bundleMDX } from 'mdx-bundler';
+import { join } from 'path';
 import readingTime from 'reading-time';
-
-import remarkGfm from 'remark-gfm';
-import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrism from 'rehype-prism-plus';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 import { FileType, FrontMatterResponse, Post } from './types';
 
@@ -20,7 +19,9 @@ export async function getFileBySlug(type: FileType, slug?: string): Promise<Fron
     ? readFileSync(join(process.cwd(), 'data', type, `${slug}.mdx`), 'utf8')
     : readFileSync(join(process.cwd(), 'data', `${type}.mdx`), 'utf8');
 
-  const { code, frontmatter } = await bundleMDX({source, mdxOptions(options) {
+  const { code, frontmatter } = await bundleMDX({
+    source,
+    mdxOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
         ...(options?.rehypePlugins ?? []),

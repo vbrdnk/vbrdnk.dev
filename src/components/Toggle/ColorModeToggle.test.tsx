@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { ColorModeToggle } from '@/components/Toggle/ColorModeToggle';
 
@@ -23,4 +23,3 @@ describe('ColorModeToggle', () => {
     expect(toggleColorModeMock).toHaveBeenCalledTimes(1);
   });
 });
-

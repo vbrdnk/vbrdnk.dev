@@ -3,9 +3,8 @@
  * functions. The enhances exported render function comes pre-wrapped in *all* of the
  * context providers in the UI.
  */
-import type { ReactElement, FC, PropsWithChildren } from 'react';
-
 import { render as rtlRender } from '@testing-library/react';
+import type { FC, PropsWithChildren, ReactElement } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 type RenderResult = ReturnType<typeof rtlRender>;
@@ -15,14 +14,9 @@ type RenderLifeCycles = {
 type ReactTestingLibraryRenderOptions = Parameters<typeof rtlRender>[1];
 type ReactTestingLibraryRenderUi = Parameters<typeof rtlRender>[0];
 
-export type RenderOptions =
-  RenderLifeCycles &
-  ReactTestingLibraryRenderOptions;
+export type RenderOptions = RenderLifeCycles & ReactTestingLibraryRenderOptions;
 
-export type Render = (
-  ui: ReactTestingLibraryRenderUi,
-  options?: RenderOptions,
-) => RenderResult;
+export type Render = (ui: ReactTestingLibraryRenderUi, options?: RenderOptions) => RenderResult;
 
 const queryClient = new QueryClient();
 
@@ -36,15 +30,8 @@ function getWrapper(): FC {
 
 const render: Render = (
   ui,
-  {
-    container,
-    baseElement,
-    hydrate,
-    afterRender = (): void => {
-    },
-  } = {},
+  { container, baseElement, hydrate, afterRender = (): void => {} } = {}
 ): RenderResult => {
-
   const Wrapper = getWrapper();
 
   const renderResult = rtlRender(ui, {
@@ -62,6 +49,5 @@ const render: Render = (
 
 export const getRender =
   (defaultOptions: RenderOptions = {}): Render =>
-    (ui, options = {}): ReturnType<Render> =>
-      render(ui, { ...defaultOptions, ...options });
-
+  (ui, options = {}): ReturnType<Render> =>
+    render(ui, { ...defaultOptions, ...options });

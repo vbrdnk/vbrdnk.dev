@@ -1,13 +1,15 @@
 import React from 'react';
+
 import { ColorModeScript, Flex } from '@chakra-ui/react';
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { Providers } from './providers/Providers';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 
-import theme from '@/styles/theme';
 import '@/styles/globals.scss';
+import theme from '@/styles/theme';
+
 import { fonts } from './fonts';
+import { Providers } from './providers/Providers';
 
 const title = '{code•aligned}';
 const description = 'Personal blog by Vladyslav Burdeniuk. I express myself with words and code.';
@@ -30,7 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${fonts.plexSans.variable} ${fonts.montserrat.variable}`}>
       <body>
-        {/* Layout UI */}
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Providers>
           <main>

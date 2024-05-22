@@ -1,4 +1,4 @@
-import { Montserrat, IBM_Plex_Sans } from 'next/font/google';
+import { IBM_Plex_Sans, Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({
   subsets: ['latin'],

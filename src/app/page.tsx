@@ -1,9 +1,11 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { Heading, Text, Flex, Box } from '@chakra-ui/react';
-import avatarPic from '../../public/static/images/avatar.jpg';
+import Link from 'next/link';
+
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 
 import { PlaylistOfTheWeek } from '@/components/PlaylistOfTheWeek';
+
+import avatarPic from '../../public/static/images/avatar.jpg';
 
 export default function HomePage() {
   return (

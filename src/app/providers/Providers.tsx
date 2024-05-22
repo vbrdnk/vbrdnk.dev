@@ -1,12 +1,13 @@
 'use client';
 
-import React from 'react';
-import { ChakraProvider, CSSReset } from '@chakra-ui/react';
-import { QueryClient, QueryClientProvider, useIsFetching } from 'react-query';
-import theme from '@/styles/theme';
+import { CSSReset, ChakraProvider } from '@chakra-ui/react';
+import { Global, css } from '@emotion/react';
 import { Analytics } from '@vercel/analytics/react';
+import React from 'react';
+import { QueryClient, QueryClientProvider, useIsFetching } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { css, Global } from '@emotion/react';
+
+import theme from '@/styles/theme';
 
 const queryClient = new QueryClient();
 

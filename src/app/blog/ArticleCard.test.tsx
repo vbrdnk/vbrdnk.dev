@@ -15,7 +15,9 @@ describe('Article Card', () => {
   it('renders article card', () => {
     render(<ArticleCard {...TEST_ARTICLE_PROPS} />);
     expect(screen.getByTestId(TEST_ARTICLE_PROPS.slug)).toBeInTheDocument();
-    expect(screen.getByText(format(parseISO(TEST_ARTICLE_PROPS.createdAt), 'MMMM d, yyyy'))).toBeInTheDocument();
+    expect(
+      screen.getByText(format(parseISO(TEST_ARTICLE_PROPS.createdAt), 'MMMM d, yyyy'))
+    ).toBeInTheDocument();
   });
 
   it('renders article card as article tag', () => {

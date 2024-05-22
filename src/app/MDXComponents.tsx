@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
-import { Code, Heading, OrderedList, ListItem } from '@chakra-ui/react';
+import Link from 'next/link';
+
+import { Code, Heading, ListItem, OrderedList } from '@chakra-ui/react';
 
 const CustomLink = (props: any): JSX.Element => {
   const href = props.href;

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { Heading } from '@chakra-ui/react';
 import { Flex, Text } from '@chakra-ui/react';
 

@@ -1,15 +1,13 @@
-import React from 'react';
 import { Stack } from '@chakra-ui/react';
+import React from 'react';
 
-import NavItem from './NavItem';
+import { NavigationItem } from './NavItem';
 
-const Nav = (): JSX.Element => {
+export const Navigation = (): JSX.Element => {
   return (
     <Stack direction="row" spacing={1} align="center" as="nav">
-      <NavItem href="/" text="home" />
-      <NavItem href="/blog" text="blog" />
+      <NavigationItem href="/" text="home" />
+      <NavigationItem href="/blog" text="blog" />
     </Stack>
   );
 };
-
-export default Nav;

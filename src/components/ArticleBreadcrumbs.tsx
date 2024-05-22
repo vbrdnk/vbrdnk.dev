@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Text } from '@chakra-ui/react';
+import React from 'react';
 
 type ArticleBreadcrumbsProps = {
   /**
@@ -14,11 +14,12 @@ type ArticleBreadcrumbsProps = {
 };
 export const ArticleBreadcrumbs = ({ title }: ArticleBreadcrumbsProps): JSX.Element => {
   const pathname = usePathname();
-  // @ts-ignore
+
   const paths = pathname
     .split('/')
     .filter(path => path !== '')
     .slice(0, -1);
+
   return (
     <Breadcrumb mb={12}>
       <BreadcrumbItem color="pink.500">

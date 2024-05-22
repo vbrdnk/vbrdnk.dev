@@ -1,9 +1,10 @@
+import { Box, Flex, Heading } from '@chakra-ui/react';
+import { compareDesc, parseISO } from 'date-fns';
 import React from 'react';
-import { Heading, Box, Flex } from '@chakra-ui/react';
-import { parseISO, compareDesc } from 'date-fns';
 
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 import { FileType } from '@/lib/types';
+
 import ArticleCard from './ArticleCard';
 
 export default async function BlogPage() {

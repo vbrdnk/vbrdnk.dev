@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const config = {
   reactStrictMode: true,
   poweredByHeader: false,
   async redirects() {
@@ -11,3 +12,5 @@ module.exports = {
     ];
   },
 };
+
+export default config;
