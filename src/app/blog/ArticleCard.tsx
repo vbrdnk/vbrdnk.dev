@@ -11,10 +11,10 @@ export type ArticleProps = Post;
 
 const ArticleCard = ({ title, description, slug, createdAt }: ArticleProps): JSX.Element => {
   return (
-    <Flex as="article" direction="column" data-testid={slug}>
-      <Flex as="header" direction="column">
+    <Flex as='article' direction='column' data-testid={slug}>
+      <Flex as='header' direction='column'>
         <Heading mb={2}>
-          <Link href={`/blog/${slug}`} className="link" passHref>
+          <Link href={`/blog/${slug}`} className='link' passHref>
             {title}
           </Link>
         </Heading>
